@@ -32,7 +32,7 @@ bool isFull(){
 	}
 }
 
-class MyStack {
+class MyStack{
     public:
     int getTop(){
     	return head->data;
@@ -63,16 +63,48 @@ class MyStack {
     }
 };
 
-int main()
-{
+void menu(){
+    char pilih1, ulang;
+    int data,x;
     MyStack s;
-    s.push(8);
-    s.push(3);
-    s.push(2);
-    s.push(9);
-    s.pop();
-    s.pop();
-    s.pop();
-    s.printStackList();
+
+    do{
+      	system("cls");
+      	cout<<"STACK SINGLE LINKED LIST \n------------------------\n\n";
+      	printStackList();
+      	cout<<"\nMenu : \n1. Isi\n2. Pop\n3. Keluar\n>>";
+      	cin>>pilih1;
+
+      	switch(pilih1){
+      		case '1' :
+      			if(isFull() == 0){
+      				cout<<"\nMasukkan data : ";
+            		cin>>data;
+            		s.push(data);
+            	}
+				else
+					cout<<"\nStack penuh!\n";
+				break;
+      		case '2' :
+      			if (isEmpty() == 0){
+				  	s.pop();
+      			}
+      			else
+      				cout<<"\nStack masih kosong!\n";
+            	break;
+      		case '3' :
+      			exit(0);
+            	break;
+      		default :
+            	cout<<"\nPilih ulang"<<endl;
+      	}
+      	cout<<"\nKembali ke menu?(y/n)\n>>";
+      	cin>>ulang;
+    }
+	while(ulang=='y' || ulang=='Y');
+}
+
+int main(){
+    menu();
     return 0;
 }
