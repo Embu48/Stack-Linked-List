@@ -1,5 +1,5 @@
 #include <iostream>
-#define MAX_STACK_SIZE 10
+#define KUOTA_STACK 5
 
 struct TNode{
 	int data;
@@ -34,34 +34,32 @@ bool isFull(){
 
 class MyStack {
     public:
-    void push(int data){
-        Element item;
-        item.data=data;
-        if (!isFull()){
-            stack[++top]=item;
-        } else {
-            std::cout<<"Stack Penuh"<<std::endl;
-        }
-    }
-    Element pop(){
-        Element item;
-        if (!isEmpty()){
-            item = stack[top--];
-        } else {
-            std::cout<<"Stack Kosong"<<std::endl;
-        }
-        return item;
-    }
-    void printStackList(){
-        if (!isEmpty()){
-            for (int i=top;i>=0;i--)
-                std::cout<<stack[i].data<<std::endl;
-        } else {
-            std::cout<<"Stack Kosong"<<std::endl;
-        }
-    }
     int getTop(){
-        return top;
+    	return head->data;
+	}
+    void push(int databaru){
+		TNode *baru;
+		baru = new TNode;
+		baru->data = databaru;
+		baru->next=NULL;
+		if(isEmpty() == 1){
+			baru->next = head;
+			head=baru;
+		}
+		else{
+			baru->next=head;
+			head=baru;
+		}
+		cout<<"Nilai "<<getTop()<<" masuk\n";
+	}
+    void pop(){
+    	TNode *hapus;
+		int d;
+		hapus = head;
+		d = head->data;
+		head=head->next;
+		delete hapus;
+		cout<<endl<<d<<" terambil\n";
     }
 };
 
