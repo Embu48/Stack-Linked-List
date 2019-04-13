@@ -27,9 +27,9 @@ bool isFull(){
 		bantu = head;
 		while (bantu != '\0'){
 			f++;
-			bantu=bantu->next;
+			bantu = bantu->next;
 		}
-		return f>KUOTA_STACK-1;
+		return f > KUOTA_STACK-1;
 	}
 }
 
@@ -42,13 +42,13 @@ class MyStack{
 		TNode *baru;
 		baru = new TNode;
 		baru->data = databaru;
-		baru->next=NULL;
+		baru->next = NULL;
 		if(isEmpty() == 1){
 			baru->next = head;
-			head=baru;
+			head = baru;
 		}
 		else{
-			baru->next=head;
+			baru->next = head;
 			head=baru;
 		}
 		cout<<"Nilai "<<getTop()<<" masuk\n";
@@ -58,34 +58,34 @@ class MyStack{
 		int d;
 		hapus = head;
 		d = head->data;
-		head=head->next;
+		head = head->next;
 		delete hapus;
 		cout<<endl<<d<<" terambil\n";
     }
 };
 
 void printStackList(){
-    	TNode *b;
-		b = head;
-		int f=0;
-			while(b != '\0'){
-				b=b->next;
+    	TNode *bantu;
+		bantu = head;
+		int f = 0;
+			while(bantu != '\0'){
+				bantu = bantu->next;
 				f++;
 			}
 			for(int x=f;x<KUOTA_STACK;x++){
 				cout<<"| 	|\n";
 			}
-			b=head;
+			bantu = head;
 			while(b != '\0'){
 				cout<<"| "<<b->data<<"\t|\n";
-				b=b->next;
+				bantu = bantu->next;
 			}
 			cout<<"---------\n";
 } 
 
 void menu(){
-    char pilih1, ulang;
-    int data,x;
+    char pilih, ulang;
+    int data;
     MyStack s;
 
     do{
@@ -93,15 +93,15 @@ void menu(){
       	cout<<"STACK SINGLE LINKED LIST \n------------------------\n\n";
       	printStackList();
       	cout<<"\nMenu : \n1. Isi\n2. Pop\n3. Keluar\n>>";
-      	cin>>pilih1;
+      	cin>>pilih;
 
-      	switch(pilih1){
+      	switch(pilih){
       		case '1' :
       			if(isFull() == 0){
       				cout<<"\nMasukkan data : ";
             		cin>>data;
             		s.push(data);
-            	}
+            		}
 				else
 					cout<<"\nStack penuh!\n";
 				break;
@@ -111,12 +111,12 @@ void menu(){
       			}
       			else
       				cout<<"\nStack masih kosong!\n";
-            	break;
+            		break;
       		case '3' :
       			exit(0);
-            	break;
+            		break;
       		default :
-            	cout<<"\nPilih ulang"<<endl;
+            		cout<<"\nPilih ulang"<<endl;
       	}
       	cout<<"\nKembali ke menu?(y/n)\n>>";
       	cin>>ulang;
