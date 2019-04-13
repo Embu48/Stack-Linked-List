@@ -76,8 +76,8 @@ void printStackList(){
 				cout<<"| 	|\n";
 			}
 			bantu = head;
-			while(b != '\0'){
-				cout<<"| "<<b->data<<"\t|\n";
+			while(bantu != '\0'){
+				cout<<"| "<<bantu->data<<"\t|\n";
 				bantu = bantu->next;
 			}
 			cout<<"---------\n";
