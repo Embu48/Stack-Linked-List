@@ -1,5 +1,6 @@
 #include <iostream>
 #define KUOTA_STACK 5
+using namespace std;
 
 struct TNode{
 	int data;
