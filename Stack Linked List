@@ -63,6 +63,25 @@ class MyStack{
     }
 };
 
+void printStackList(){
+    	TNode *b;
+		b = head;
+		int f=0;
+			while(b != '\0'){
+				b=b->next;
+				f++;
+			}
+			for(int x=f;x<KUOTA_STACK;x++){
+				cout<<"| 	|\n";
+			}
+			b=head;
+			while(b != '\0'){
+				cout<<"| "<<b->data<<"\t|\n";
+				b=b->next;
+			}
+			cout<<"---------\n";
+} 
+
 void menu(){
     char pilih1, ulang;
     int data,x;
