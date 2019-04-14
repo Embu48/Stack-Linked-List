@@ -10,28 +10,19 @@ struct TNode{
 
 TNode *head;
 
-void init(){
-	head = NULL;
-}
-
 bool isEmpty(){
 	return head == NULL;
 }
 
 bool isFull(){
-	if(isEmpty() == 1){
-		return 0;
+	TNode *bantu;
+	int f;
+	bantu = head;
+	while (bantu != '\0'){
+		f++;
+		bantu = bantu->next;
 	}
-	else {
-		TNode *bantu;
-		int f;
-		bantu = head;
-		while (bantu != '\0'){
-			f++;
-			bantu = bantu->next;
-		}
-		return f > KUOTA_STACK-1;
-	}
+	return f > KUOTA_STACK-1;
 }
 
 class MyStack{
