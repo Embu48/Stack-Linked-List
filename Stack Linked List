@@ -57,7 +57,7 @@ class MyStack{
     	TNode *hapus;
 		int d;
 		hapus = head;
-		d = head->data;
+		d = getTop();
 		head = head->next;
 		delete hapus;
 		cout<<endl<<d<<" terambil\n";
