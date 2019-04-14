@@ -34,29 +34,21 @@ class MyStack{
 		TNode *baru;
 		baru = new TNode;
 		baru->data = databaru;
-		if(isEmpty() == 1){
-			baru->next = head;
-			head = baru;
-		}
-		else{
 			baru->next = head;
 			head=baru;
-		}
 		cout<<"Nilai "<<getTop()<<" masuk\n";
 	}
     void pop(){
-    	TNode *hapus;
-		int d;
+    		TNode *hapus;
 		hapus = head;
-		d = getTop();
-		head = head->next;
-		delete hapus;
-		cout<<endl<<"Nilai "<<d<<" keluar\n";
+			head = head->next;
+		cout<<endl<<"Nilai "<<hapus->data<<" keluar\n";
+	    		delete hapus;
     }
 };
 
 void printStackList(){
-    	TNode *bantu;
+    		TNode *bantu;
 		bantu = head;
 		int f = 0;
 			while(bantu != '\0'){
@@ -81,7 +73,7 @@ void menu(){
 
     do{
       	system("cls");
-      	cout<<"STACK SINGLE LINKED LIST \n------------------------\n\n";
+      	cout<<"STACK SINGLE LINKED LIST \n------------------------\nKuota Stack : "<<KUOTA_STACK<<"\n\n";
       	printStackList();
       	cout<<"\nMenu : \n1. Push\n2. Pop\n3. Keluar\n>>";
       	cin>>pilih;
