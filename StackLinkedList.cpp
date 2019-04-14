@@ -1,5 +1,6 @@
 #include <iostream>
-#define KUOTA_STACK 5
+#include <windows.h>
+#define KUOTA_STACK 10
 using namespace std;
 
 struct TNode{
