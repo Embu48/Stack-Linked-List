@@ -1,5 +1,4 @@
 #include <iostream>
-#include <windows.h>
 #define KUOTA_STACK 10
 using namespace std;
 
@@ -72,8 +71,7 @@ void menu(){
     MyStack s;
 
     do{
-      	system("cls");
-      	cout<<"STACK SINGLE LINKED LIST \n------------------------\nKuota Stack : "<<KUOTA_STACK<<"\n\n";
+      	cout<<"\n------------------------\nSTACK SINGLE LINKED LIST \n------------------------\nKuota Stack : "<<KUOTA_STACK<<"\n\n";
       	printStackList();
       	cout<<"\nMenu : \n1. Push\n2. Pop\n3. Keluar\n>>";
       	cin>>pilih;
